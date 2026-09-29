@@ -1,0 +1,42 @@
+# Public Ireland
+
+> A local Bank of Ireland Open Banking AISP sandbox plus a Python SDK and Docker. No certificates required for local use.
+
+## Purpose
+Explain this as a practice bank-read sandbox on your machine, not a live bank connection. Source: fitzyracing1/public-ireland.
+
+## How it works (plain English)
+1. Run the local simulator.
+2. Use the Python SDK against that simulator.
+3. Skip live certificates while you stay local.
+4. Optional Docker box for the same sim.
+
+## Key ideas
+- AISP sandbox (account-information practice, local only)
+- No certificates for local use
+- SDK (a small Python client)
+
+## The actual code
+```
+# source: fitzyracing1/public-ireland
+sim = start_local_aisp()
+client = python_sdk(sim)
+# no live certs on this path
+```
+
+## Line-by-line translation
+1. start_local_aisp() → “turn on the fake bank-read server”
+2. python_sdk(sim) → “talk to it in Python”
+
+## Decisions the program makes
+- If the path is local → no certs
+- If someone asks for a live bank break-in → refuse; this is a sandbox
+
+## What a person would notice
+A practice Ireland open-banking door on localhost.
+
+## Current status
+Barrage clone.
+
+## Next possible steps
+Open the source and start the local sim.
